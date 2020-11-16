@@ -1,7 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const app = express();
-const port = 3000
 
 //handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -17,6 +16,5 @@ app.get('/menu', (req, res) => res.render('menu'));
 
 app.get('/order', (req, res) => res.render('order'));
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log('conecct'))
